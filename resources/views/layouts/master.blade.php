@@ -32,9 +32,15 @@
         <![endif]-->
     <!-- Google Font-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <style>
+        div.dataTables_filter input {
+            width: 300px;
+        }
+    </style>
 </head>
 
-<body class=" hold-transition skin-green sidebar-mini">
+<body class=" hold-transition skin-green sidebar-mini sidebar-collapse">
     <div class="wrapper">
 
         @includeIf('layouts.header')

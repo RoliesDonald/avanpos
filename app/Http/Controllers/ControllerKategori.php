@@ -25,8 +25,12 @@ class ControllerKategori extends Controller
             ->addColumn('action', function ($kategori) {
                 return '
                 <div class="btn-group">
-                <button class="btn btn-xs btn-success" onclick="editdata(`' . route('kategori.update', $kategori->id_kategori) . '`)"><i class="fa fa-edit"></i></button>
-                <button class="btn btn-xs btn-danger" onclick="deleteData(`' . route('kategori.destroy', $kategori->id_kategori) . '`)"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-xs btn-success" onclick="editdata(`' .
+                    route('kategori.update', $kategori->id_kategori) .
+                    '`)"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-xs btn-danger" onclick="deleteData(`' .
+                    route('kategori.destroy', $kategori->id_kategori) .
+                    '`)"><i class="fa fa-trash"></i></button>
                 </div>
                 ';
             })
@@ -90,6 +94,6 @@ class ControllerKategori extends Controller
     {
         $kategori = Kategori::find($id);
         $kategori->delete();
-        return response(null, 200);
+        return response(null, 204);
     }
 }

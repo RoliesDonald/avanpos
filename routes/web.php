@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ControllerKategori;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +35,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/kategori', ControllerKategori::class);
 
     Route::get('/produk/data', [ProdukController::class, 'data'])->name('produk.data');
+    Route::post('/produk/delete-selected', [ProdukController::class, 'deleteSelected'])->name('produk.delete_selected');
+    Route::post('/produk/cetak-barcode', [ProdukController::class, 'cetakBarcode'])->name('produk.cetak_barcode');
     Route::resource('/produk', ProdukController::class);
+
+    Route::get('/member/data', [MemberController::class, 'data'])->name('member.data');
+    Route::post('/member/cetak-member', [MemberController::class, 'cetakMember'])->name('member.cetak_member');
+    Route::resource('/member', MemberController::class);
 });

@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -155,24 +154,27 @@ return [
     |
     */
 
-    'providers' => ServiceProvider::defaultProviders()->merge([
-        /*
-         * Package Service Providers...
-         */
+    'providers' => ServiceProvider::defaultProviders()
+        ->merge([
+            /*
+             * Package Service Providers...
+             */
 
-
-        /*
-        * Application Service Providers...
-        */
-        Yajra\DataTables\DataTablesServiceProvider::class,
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        App\Providers\FortifyServiceProvider::class,
-        App\Providers\JetstreamServiceProvider::class,
-    ])->toArray(),
+            /*
+             * Application Service Providers...
+             */
+            Yajra\DataTables\DataTablesServiceProvider::class,
+            App\Providers\AppServiceProvider::class,
+            App\Providers\AuthServiceProvider::class,
+            // App\Providers\BroadcastServiceProvider::class,
+            App\Providers\EventServiceProvider::class,
+            App\Providers\RouteServiceProvider::class,
+            App\Providers\FortifyServiceProvider::class,
+            App\Providers\JetstreamServiceProvider::class,
+            Milon\Barcode\BarcodeServiceProvider::class,
+            Barryvdh\DomPDF\ServiceProvider::class,
+        ])
+        ->toArray(),
 
     /*
     |--------------------------------------------------------------------------
@@ -185,9 +187,14 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-        // 'Example' => App\Facades\Example::class,
-    ])->toArray(),
+    'aliases' => Facade::defaultAliases()
+        ->merge([
+            'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+            'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
+            'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
+            'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
 
+            // 'Example' => App\Facades\Example::class,
+        ])
+        ->toArray(),
 ];

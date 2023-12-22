@@ -34,7 +34,7 @@
                         <a href="{{ route('produk.index') }}"><i class="fa fa-circle-o"></i> Produk</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-circle-o"></i> Karyawan</a>
+                        <a href="{{ route('member.index') }}"><i class="fa fa-circle-o"></i> Karyawan</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-circle-o"></i> Suplier</a>
