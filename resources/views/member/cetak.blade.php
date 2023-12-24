@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Cetak Kartu Member</title>
 
-        {{-- <style>
+        <style>
             .box {
                 position: relative;
             }
@@ -76,7 +76,7 @@
             .text-center {
                 text-align: center;
             }
-        </style> --}}
+        </style>
     </head>
 
     <body>
@@ -87,10 +87,11 @@
                         @foreach ($data as $item)
                             <td class="text-center">
                                 <div class="box">
-                                    <img src="{{ asset('/public/images/member.png') }}" alt="card" width="50%" />
+                                    <img src="{{ asset('/public/images/member.png') }}" alt="card" width="20%" />
                                     <div class="logo">
                                         <p>Avan</p>
-                                        <img src="{{ asset('/public/images/logo.png') }}" alt="logo" />
+                                        <img src="{{ asset('/public/images/logo.png') }}" alt="logo"
+                                            width="50%" />
                                     </div>
                                     <div class="nama">{{ $item->nama }}</div>
                                     <div class="telepon">{{ $item->telepon }}</div>

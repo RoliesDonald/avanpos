@@ -8,7 +8,9 @@
                 <img src="{{ asset('AdminLTE-2/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-right info">
-                <p><b>{{ auth()->user()->name }}</b></p>
+                <p>
+                    <b>{{ auth()->user()->name }}</b>
+                </p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -37,7 +39,7 @@
                         <a href="{{ route('member.index') }}"><i class="fa fa-circle-o"></i> Karyawan</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-circle-o"></i> Suplier</a>
+                        <a href="{{ route('supplier.index') }}"><i class="fa fa-dropbox"></i> Suplier</a>
                     </li>
                 </ul>
             </li>
@@ -51,8 +53,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="#"><i class="fa fa-circle-o"></i> Transaksi
-                            Pembelian</a>
+                        <a href="{{ route('pengeluaran.index') }}"><i class="fa fa-circle-o"></i> Pengeluaran</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-circle-o"></i> Daftar Pembelian</a>

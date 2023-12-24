@@ -35,10 +35,10 @@ class MemberController extends Controller
             ->addColumn('action', function ($member) {
                 return '
                 <div class="btn-group">
-                <button class="btn btn-xs btn-success" onclick="editdata(`' .
+                <button type="button" class="btn btn-xs btn-success" onclick="editdata(`' .
                     route('member.update', $member->id_member) .
                     '`)"><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-xs btn-danger" onclick="deleteData(`' .
+                <button type="button" class="btn btn-xs btn-danger" onclick="deleteData(`' .
                     route('member.destroy', $member->id_member) .
                     '`)"><i class="fa fa-trash"></i></button>
                 </div>
@@ -131,7 +131,7 @@ class MemberController extends Controller
 
         $no = 1;
         $pdf = PDF::loadView('member.cetak', compact('cetakIdCardMember', 'no'));
-        $pdf->setPaper('a4', 'portrait');
+        $pdf->setPaper(array(0, 0, 566.93, 850.39), 'potrait');
         return $pdf->stream('member.pdf');
     }
 }
