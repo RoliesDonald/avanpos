@@ -69,6 +69,14 @@
                         <a href="#"><i class="fa fa-circle-o"></i> Transaksi
                             Penjualan</a>
                     </li>
+                    <li>
+                        <a href="#"><i class="fa fa-circle-o"></i> Transaksi
+                            Baru</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-circle-o"></i> Transaksi
+                            Lama</a>
+                    </li>
                 </ul>
             </li>
             <li class="treeview">
